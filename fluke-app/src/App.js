@@ -1,15 +1,8 @@
 import { MemoryRouter, Routes, Route, useInRouterContext, Link, useParams } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Button from './Button';
 import { movies } from './data';
 import MovieCard from './components/MovieCard';
-
-const teamMembers = [
-  { name: 'อชิตพล หวานจะโปะ', major: 'IT' },
-  { name: 'สุจิรา พลอยสำลี', major: 'IT' },
-  { name: 'วรเมธ บุญใหญ่', major: 'IT' },
-];
 
 function MovieDetail() {
   const { id } = useParams();
@@ -61,15 +54,6 @@ function Home() {
     <div className="flex min-h-screen flex-col bg-slate-50">
       <Navbar />
 
-      <header className="bg-slate-900 px-6 pb-16 pt-12 text-center">
-        <h1 className="text-3xl font-bold text-white md:text-5xl">
-          ดูหนังดี ๆ ไปด้วยกัน
-        </h1>
-        <p className="mx-auto mt-4 max-w-xl text-slate-400">
-          รวมหนังคุณภาพที่คัดมาแล้ว อัปเดตใหม่ทุกสัปดาห์
-        </p>
-      </header>
-
       <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-10">
         <h2 className="mb-6 text-2xl font-bold text-slate-800">Movie Card</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -78,23 +62,6 @@ function Home() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl bg-white p-8 shadow-sm">
-          <h2 className="mb-6 text-2xl font-bold text-slate-800">สมาชิกกลุ่มของเรา</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {teamMembers.map((member) => (
-              <div key={member.name} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                <h3 className="text-lg font-bold text-slate-800">{member.name}</h3>
-                <p className="mt-2 text-sm text-slate-600">สาขา: {member.major}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex gap-3 p-6">
-          <Button>บันทึก</Button>
-          <Button variant="danger">ลบ</Button>
-          <Button variant="ghost">ยกเลิก</Button>
-        </div>
       </main>
 
       <Footer />
