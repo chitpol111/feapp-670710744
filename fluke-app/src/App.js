@@ -2,7 +2,7 @@ import { MemoryRouter, Routes, Route, useInRouterContext, Link, useParams } from
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { movies } from './data/data';
-import MovieCard from './components/MovieCard';
+import Home from './page/Home';
 
 function MovieDetail() {
   const { id } = useParams();
@@ -44,30 +44,6 @@ function MovieDetail() {
           </p>
         </div>
       </main>
-      <Footer />
-    </div>
-  );
-}
-
-function Home() {
-  return (
-    <div className="flex min-h-screen flex-col bg-slate-50">
-      <Navbar />
-
-      <header className="bg-slate-900 px-6 py-10 text-center">
-        <h1 className="text-3xl font-bold text-white md:text-5xl">🏠 หน้าแรก</h1>
-      </header>
-
-      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-10">
-        <h2 className="mb-6 text-2xl font-bold text-slate-800">Movie Card</h2>
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-6">
-          {movies.slice(0, 3).map((movie) => (
-            <MovieCard key={movie.id} title={movie.title} year={movie.year} />
-          ))}
-        </div>
-
-      </main>
-
       <Footer />
     </div>
   );
