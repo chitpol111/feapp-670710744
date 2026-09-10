@@ -1,7 +1,7 @@
 import { MemoryRouter, Routes, Route, useInRouterContext, Link, useParams } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { movies } from './data';
+import { movies } from './data/data';
 import MovieCard from './components/MovieCard';
 
 function MovieDetail() {
