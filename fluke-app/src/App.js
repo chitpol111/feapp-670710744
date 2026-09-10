@@ -73,7 +73,7 @@ function Home() {
       <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-10">
         <h2 className="mb-6 text-2xl font-bold text-slate-800">Movie Card</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {movies.map((movie) => (
+          {movies.slice(0, 3).map((movie) => (
             <MovieCard key={movie.id} title={movie.title} year={movie.year} />
           ))}
         </div>
