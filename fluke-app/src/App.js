@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Button from './Button';
 import { movies } from './data';
+import MovieCard from './components/MovieCard';
 
 const teamMembers = [
   { name: 'อชิตพล หวานจะโปะ', major: 'IT' },
@@ -70,19 +71,10 @@ function Home() {
       </header>
 
       <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-10">
-        <h2 className="mb-6 text-2xl font-bold text-slate-800">หนังแนะนำ</h2>
+        <h2 className="mb-6 text-2xl font-bold text-slate-800">Movie Card</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {movies.map((movie) => (
-            <div
-              key={movie.id}
-              className="rounded-2xl border border-slate-100 bg-white p-6 shadow-md transition hover:-translate-y-1 hover:shadow-xl"
-            >
-              <h3 className="text-lg font-bold text-slate-800">{movie.title}</h3>
-              <p className="mt-1 text-sm text-slate-500">ปี {movie.year}</p>
-              <span className="mt-3 inline-block rounded-full bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-700">
-                {movie.genre}
-              </span>
-            </div>
+            <MovieCard key={movie.id} title={movie.title} year={movie.year} />
           ))}
         </div>
 
