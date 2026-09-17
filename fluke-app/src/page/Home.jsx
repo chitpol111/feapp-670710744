@@ -1,7 +1,7 @@
 import { movies } from '../data/data';
 import MovieCard from '../components/MovieCard';
 import MovieGallery from '../components/MovieGallery';
-import Navbar from '../Navbar';
+import Navbar from '../components/Navbar';
 import Footer from '../Footer';
 
 function Home() {
