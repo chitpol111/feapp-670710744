@@ -1,54 +1,9 @@
-import { MemoryRouter, Routes, Route, useInRouterContext, Link, useParams } from 'react-router-dom';
+import { MemoryRouter, Routes, Route, useInRouterContext, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './Footer';
-import { movies } from './data/data';
 import Home from './page/Home';
 import Movies from './page/Movies';
-
-function MovieDetail() {
-  const { id } = useParams();
-  const movie = movies.find((item) => String(item.id) === String(id));
-
-  if (!movie) {
-    return (
-      <div className="flex min-h-screen flex-col bg-slate-50">
-        <Navbar />
-        <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-10 text-center">
-          <h1 className="text-3xl font-bold text-slate-800">ไม่พบหนังเรื่องนี้</h1>
-          <p className="mt-4 text-slate-600">ID ที่คุณเรียกคือ: {id}</p>
-          <Link to="/movies" className="mt-6 inline-block rounded-lg bg-cyan-600 px-4 py-2 font-semibold text-white">
-            กลับไปหน้า Movies
-          </Link>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex min-h-screen flex-col bg-slate-50">
-      <Navbar />
-      <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-10">
-        <Link to="/movies" className="mb-6 inline-block text-sm font-medium text-cyan-600">
-          ← กลับไปหนังทั้งหมด
-        </Link>
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600">Movie ID: {movie.id}</p>
-          <h1 className="mt-3 text-4xl font-bold text-slate-800">{movie.title}</h1>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <span className="rounded-full bg-cyan-50 px-3 py-1 text-sm font-medium text-cyan-700">{movie.genre}</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600">ปี {movie.year}</span>
-          </div>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600">
-            หนังเรื่องนี้เป็นตัวอย่างการใช้ dynamic route ใน React Router โดยค่า {id} จะถูกจับจาก URL
-            และแสดงผลในหน้า MovieDetail ได้แบบอัตโนมัติ
-          </p>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
-}
+import MovieDetail from './page/MovieDetail';
 
 function About() {
   return (
