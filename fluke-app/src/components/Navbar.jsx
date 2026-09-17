@@ -8,8 +8,8 @@ const linkClass = ({ isActive }) =>
 
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between bg-slate-900 px-6 py-4">
-      <span className="text-xl font-bold text-white">
+    <nav className="relative flex items-center justify-center bg-slate-900 px-6 py-4">
+      <span className="absolute left-6 text-xl font-bold text-white">
         🎬 Movie<span className="text-cyan-400">Hub</span>
       </span>
       <div className="flex gap-6">
